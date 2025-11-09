@@ -13,10 +13,28 @@
       "imageHint": "software developer"
     },
     {
+      "id": "career-data",
+      "description": "Charts and graphs on a screen representing data analysis.",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXRhJTIwc2NpZW5jZXxlbnwwfHx8fDE3NjM4MjAyMDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data science"
+    },
+    {
       "id": "career-healthcare",
       "description": "A doctor listening to a patient's heartbeat with a stethoscope.",
       "imageUrl": "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkb2N0b3IlMjBwYXRpZW50fGVufDB8fHx8MTc2MjU4OTE5MHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "doctor patient"
+    },
+    {
+      "id": "career-dentist",
+      "description": "A dentist examining a patient's teeth.",
+      "imageUrl": "https://images.unsplash.com/photo-1629424962539-74d6b63d3345?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkZW50aXN0fGVufDB8fHx8MTc2MzgyMDIwMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dentist office"
+    },
+    {
+      "id": "career-physical-therapy",
+      "description": "A physical therapist helping a patient with exercises.",
+      "imageUrl": "https://images.unsplash.com/photo-1599058103399-52d3f749581a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwaHlzaWNhbCUyMHRoZXJhcHl8ZW58MHx8fHwxNzYzODIwMjAxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "physical therapy"
     },
     {
       "id": "career-creative",
@@ -31,10 +49,22 @@
       "imageHint": "business meeting"
     },
     {
+      "id": "career-finance",
+      "description": "Stock market data on a screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmaW5hbmNlfGVufDB8fHx8MTc2MzgyMDIwMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "finance stocks"
+    },
+    {
       "id": "career-education",
       "description": "A teacher in a classroom with students.",
       "imageUrl": "https://images.unsplash.com/flagged/photo-1550946107-8842ae9426db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dGVhY2hlciUyMGNsYXNzcm9vbXxlbnwwfHx8fDE3NjI2MTEzMzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "teacher classroom"
+    },
+    {
+      "id": "career-legal",
+      "description": "A law library with books.",
+      "imageUrl": "https://images.unsplash.com/photo-1589998059171-988d887df646?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsZWdhbHxlbnwwfHx8fDE3NjM4MjAyMDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "legal books"
     },
     {
       "id": "career-trades",

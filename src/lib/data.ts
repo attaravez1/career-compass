@@ -1,3 +1,4 @@
+
 export type Career = {
   slug: string;
   title: string;
@@ -23,6 +24,28 @@ export const careers: Career[] = [
     imagePlaceholderId: 'career-tech',
   },
   {
+    slug: 'data-scientist',
+    title: 'Data Scientist',
+    category: 'Technology',
+    description: 'Analyze and interpret complex data to help organizations make better decisions.',
+    longDescription: 'Data scientists use their analytical, statistical, and programming skills to collect, analyze, and interpret large data sets. They then use this information to develop data-driven solutions to difficult business challenges. They are part statistician, part computer scientist, and part business strategist.',
+    avgSalary: '$126,830 per year',
+    requiredEducation: "Master's or PhD in a quantitative field.",
+    skills: ['Python', 'R', 'SQL', 'Machine Learning', 'Statistics', 'Data Visualization'],
+    imagePlaceholderId: 'career-data',
+  },
+  {
+    slug: 'ux-ui-designer',
+    title: 'UX/UI Designer',
+    category: 'Technology',
+    description: 'Design user-friendly interfaces and experiences for digital products.',
+    longDescription: 'UX (User Experience) and UI (User Interface) designers work to make technology easy and enjoyable to use. UX designers focus on the overall feel of the product, while UI designers work on how the interface looks and functions. They are crucial for creating products that users love.',
+    avgSalary: '$92,750 per year',
+    requiredEducation: 'Bachelor\'s degree in design, HCI, or related field.',
+    skills: ['Figma', 'Sketch', 'User Research', 'Wireframing', 'Prototyping', 'Visual Design'],
+    imagePlaceholderId: 'career-creative',
+  },
+  {
     slug: 'registered-nurse',
     title: 'Registered Nurse',
     category: 'Healthcare',
@@ -32,6 +55,28 @@ export const careers: Career[] = [
     requiredEducation: 'Associate\'s or Bachelor\'s degree in nursing.',
     skills: ['Patient Care', 'Communication', 'Empathy', 'Attention to Detail', 'Critical Thinking'],
     imagePlaceholderId: 'career-healthcare',
+  },
+   {
+    slug: 'dentist',
+    title: 'Dentist',
+    category: 'Healthcare',
+    description: 'Diagnose and treat problems with patients’ teeth, gums, and related parts of the mouth.',
+    longDescription: 'Dentists provide vital oral healthcare. They diagnose and treat problems with teeth and gums, perform surgical procedures, and advise patients on diet, brushing, and other aspects of dental care. Many own their own businesses and manage a team of dental hygienists and assistants.',
+    avgSalary: '$164,010 per year',
+    requiredEducation: 'Doctor of Dental Surgery (DDS) or Doctor of Medicine in Dentistry (DMD).',
+    skills: ['Oral Health', 'Patient Care', 'Manual Dexterity', 'Attention to Detail', 'Problem-solving'],
+    imagePlaceholderId: 'career-dentist',
+  },
+  {
+    slug: 'physical-therapist',
+    title: 'Physical Therapist',
+    category: 'Healthcare',
+    description: 'Help injured or ill people improve their movement and manage their pain.',
+    longDescription: 'Physical therapists are movement experts who improve quality of life through prescribed exercise, hands-on care, and patient education. They diagnose and treat individuals of all ages, from newborns to the very oldest, who have medical problems or other health-related conditions that limit their abilities to move and function in their daily lives.',
+    avgSalary: '$91,010 per year',
+    requiredEducation: 'Doctor of Physical Therapy (DPT) degree.',
+    skills: ['Anatomy', 'Exercise Physiology', 'Patient Rehabilitation', 'Communication', 'Empathy'],
+    imagePlaceholderId: 'career-physical-therapy',
   },
   {
     slug: 'graphic-designer',
@@ -56,6 +101,17 @@ export const careers: Career[] = [
     imagePlaceholderId: 'career-business',
   },
   {
+    slug: 'financial-analyst',
+    title: 'Financial Analyst',
+    category: 'Business',
+    description: 'Provide guidance to businesses and individuals making investment decisions.',
+    longDescription: 'Financial analysts assess the performance of stocks, bonds, and other types of investments. They work for banks, insurance companies, and other financial institutions, providing guidance to businesses and individuals to help them with their investment decisions. They must be analytical, detail-oriented, and have a strong understanding of financial markets.',
+    avgSalary: '$83,660 per year',
+    requiredEducation: 'Bachelor\'s degree in finance, economics, or a related field.',
+    skills: ['Financial Modeling', 'Data Analysis', 'Excel', 'Valuation', 'Communication'],
+    imagePlaceholderId: 'career-finance',
+  },
+  {
     slug: 'elementary-teacher',
     title: 'Elementary School Teacher',
     category: 'Education',
@@ -65,6 +121,17 @@ export const careers: Career[] = [
     requiredEducation: 'Bachelor\'s degree in education and state certification.',
     skills: ['Patience', 'Communication', 'Curriculum Development', 'Classroom Management'],
     imagePlaceholderId: 'career-education',
+  },
+  {
+    slug: 'lawyer',
+    title: 'Lawyer',
+    category: 'Legal',
+    description: 'Advise and represent individuals, businesses, and government agencies on legal issues and disputes.',
+    longDescription: 'Lawyers, also known as attorneys, are essential to the justice system. They counsel clients on their legal rights and obligations and suggest courses of action in business and personal matters. All attorneys must have a law degree and must also typically pass a state’s written bar examination.',
+    avgSalary: '$126,930 per year',
+    requiredEducation: 'Juris Doctor (J.D.) degree.',
+    skills: ['Legal Research', 'Analytical Reasoning', 'Persuasion', 'Writing', 'Negotiation'],
+    imagePlaceholderId: 'career-legal',
   },
   {
     slug: 'electrician',
@@ -79,7 +146,7 @@ export const careers: Career[] = [
   },
 ];
 
-export const careerCategories = [...new Set(careers.map(c => c.category))];
+export const careerCategories = [...new Set(careers.map(c => c.category))].sort();
 
 export type Post = {
   id: number;
