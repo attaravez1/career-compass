@@ -14,6 +14,7 @@ export default function Footer() {
             <Link href="/chatbot" className="hover:text-primary">Chatbot</Link>
             <Link href="/quiz" className="hover:text-primary">Quiz</Link>
             <Link href="/analyzer" className="hover:text-primary">Analyzer</Link>
+            <Link href="/career-switch" className="hover:text-primary">Switcher</Link>
             <Link href="/careers" className="hover:text-primary">Explorer</Link>
             <Link href="/community" className="hover:text-primary">Community</Link>
           </nav>

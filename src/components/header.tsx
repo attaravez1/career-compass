@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/chatbot', label: 'Chatbot' },
   { href: '/quiz', label: 'Quiz' },
   { href: '/analyzer', label: 'Analyzer' },
+  { href: '/career-switch', label: 'Switcher' },
   { href: '/careers', label: 'Explorer' },
   { href: '/community', label: 'Community' },
 ];

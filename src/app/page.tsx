@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import TypingAnimation from '@/components/typing-animation';
-import { Bot, ClipboardCheck, ScanLine, Compass, Users, ArrowRight } from 'lucide-react';
+import { Bot, ClipboardCheck, ScanLine, Compass, Users, ArrowRight, Waypoints } from 'lucide-react';
 import Image from 'next/image';
 import {PlaceHolderImages} from '@/lib/placeholder-images';
 
@@ -24,6 +24,12 @@ const features = [
     title: 'Resume/Skill Analyzer',
     description: 'Match your unique skills and resume content with ideal career options and see how you stack up.',
     href: '/analyzer',
+  },
+  {
+    icon: Waypoints,
+    title: 'Career Switch Advisor',
+    description: 'Get a personalized roadmap to help you transition into a new career field.',
+    href: '/career-switch',
   },
   {
     icon: Compass,
