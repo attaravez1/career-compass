@@ -4,15 +4,16 @@ import { useState, useRef, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Bot, User, CornerDownLeft, Loader2 } from 'lucide-react';
+import { Bot, User, CornerDownLeft, Loader2, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
-import { aiChatbotCounselor } from '@/ai/flows/ai-chatbot-counselor';
+import { aiChatbotCounselor, AIChatbotCounselorOutput } from '@/ai/flows/ai-chatbot-counselor';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Separator } from '@/components/ui/separator';
+import Link from 'next/link';
 
 const formSchema = z.object({
   message: z.string().min(10, 'Please describe your interests and skills in more detail.'),
@@ -21,6 +22,7 @@ const formSchema = z.object({
 type Message = {
   role: 'user' | 'assistant';
   content: string;
+  learningResources?: AIChatbotCounselorOutput['learningResources'];
 };
 
 export function ChatbotInterface() {
@@ -59,12 +61,13 @@ export function ChatbotInterface() {
       const assistantMessage: Message = {
         role: 'assistant',
         content: `**Career Suggestions:**\n${response.careerSuggestions}\n\n**Advice:**\n${response.advice}`,
+        learningResources: response.learningResources
       };
       setMessages((prev) => [...prev, assistantMessage]);
     } catch (error) {
       const errorMessage: Message = {
         role: 'assistant',
-        content: 'Sorry, I encountered an error. Please try again.',
+        content: 'Sorry, I encountered an error. Please try again. 😔',
       };
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
@@ -73,16 +76,24 @@ export function ChatbotInterface() {
   }
 
   const renderMarkdown = (text: string) => {
-    return text.split('\n').map((line, lineIndex) => (
-      <p key={lineIndex} className="mb-2 last:mb-0">
-        {line.split(/(\*\*.*?\*\*)/g).map((part, partIndex) => {
-          if (part.startsWith('**') && part.endsWith('**')) {
-            return <strong key={partIndex}>{part.slice(2, -2)}</strong>;
-          }
-          return part;
-        })}
-      </p>
-    ));
+    // Replace bullet points
+    text = text.replace(/•/g, '*');
+    
+    return text.split('\n').map((line, lineIndex) => {
+       if (line.trim().startsWith('* ')) {
+         return <li key={lineIndex} className="list-disc ml-4 mb-1">{line.substring(2)}</li>;
+       }
+       return (
+          <p key={lineIndex} className="mb-2 last:mb-0">
+            {line.split(/(\*\*.*?\*\*)/g).map((part, partIndex) => {
+              if (part.startsWith('**') && part.endsWith('**')) {
+                return <strong key={partIndex}>{part.slice(2, -2)}</strong>;
+              }
+              return part;
+            })}
+          </p>
+       )
+    });
   };
 
 
@@ -98,7 +109,7 @@ export function ChatbotInterface() {
                     </Avatar>
                     <div className="prose prose-sm max-w-none">
                         <p className="font-semibold">AI Counselor</p>
-                        <p>Hello! Tell me about your interests, skills, career goals, and past experiences. The more detail you provide, the better I can assist you.</p>
+                        <p>Hello! 👋 I'm here to help you explore your career options. Tell me about your interests, skills, and goals. The more you share, the better I can assist you! ✨</p>
                     </div>
                 </div>
             )}
@@ -122,6 +133,21 @@ export function ChatbotInterface() {
                   }`}
                 >
                   {renderMarkdown(message.content)}
+                   {message.learningResources && message.learningResources.length > 0 && (
+                    <div className="mt-4">
+                      <h4 className="font-bold mb-2">Here are some resources to get you started:</h4>
+                      <div className="space-y-2">
+                        {message.learningResources.map((resource, i) => (
+                          <Button asChild variant="outline" size="sm" key={i} className="w-full justify-start h-auto py-2">
+                            <Link href={resource.url} target="_blank" rel="noopener noreferrer">
+                              <Youtube className="mr-2 h-5 w-5 text-red-500" />
+                              <span className="truncate">{resource.title}</span>
+                            </Link>
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
                 {message.role === 'user' && (
                   <Avatar>
@@ -137,7 +163,7 @@ export function ChatbotInterface() {
                  </Avatar>
                 <div className="bg-muted rounded-lg p-3 flex items-center space-x-2">
                     <Loader2 className="h-5 w-5 animate-spin" />
-                    <span>Thinking...</span>
+                    <span>Thinking... 🤔</span>
                 </div>
               </div>
             )}

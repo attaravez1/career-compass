@@ -26,11 +26,28 @@ const AIChatbotCounselorInputSchema = z.object({
 });
 export type AIChatbotCounselorInput = z.infer<typeof AIChatbotCounselorInputSchema>;
 
+const LearningResourceSchema = z.object({
+  title: z.string().describe('The title of the tutorial or video.'),
+  url: z.string().url().describe('The URL to the resource.'),
+});
+
 const AIChatbotCounselorOutputSchema = z.object({
   careerSuggestions: z
     .string()
-    .describe('A list of possible careers based on the user\'s skills and interests.'),
-  advice: z.string().describe('Advice for pursuing the suggested careers.'),
+    .describe(
+      'A bulleted list of possible careers based on the user\'s skills and interests. Be encouraging and use emojis.'
+    ),
+  advice: z
+    .string()
+    .describe(
+      'Actionable advice for pursuing the suggested careers. Present this in a clear, readable format, not a single paragraph.'
+    ),
+  learningResources: z
+    .array(LearningResourceSchema)
+    .optional()
+    .describe(
+      'A list of 2-3 helpful beginner-friendly YouTube videos or tutorials if the user seems new to a field. Only provide this if relevant.'
+    ),
 });
 export type AIChatbotCounselorOutput = z.infer<typeof AIChatbotCounselorOutputSchema>;
 
@@ -42,7 +59,7 @@ const prompt = ai.definePrompt({
   name: 'aiChatbotCounselorPrompt',
   input: {schema: AIChatbotCounselorInputSchema},
   output: {schema: AIChatbotCounselorOutputSchema},
-  prompt: `You are an AI career counselor. A student will provide you with
+  prompt: `You are a friendly and encouraging AI career counselor. A student will provide you with
 their interests, skills, goals, and prior experience, and you will provide
 career suggestions and advice.
 
@@ -50,7 +67,11 @@ Interests and Skills: {{{interestsAndSkills}}}
 Goals: {{{careerGoals}}}
 Experience: {{{previousExperiences}}}
 
-Respond in a professional and helpful tone.`,
+Your response should be positive, helpful, and easy to read. Use emojis to make it more engaging! 
+- Provide career suggestions as a bulleted list.
+- Break up the advice into smaller, digestible paragraphs.
+- If the user seems like a beginner in a suggested field, find 2-3 relevant, high-quality beginner tutorials or videos from YouTube and add them to the learningResources array.
+- Respond in a professional yet conversational and helpful tone.`,
 });
 
 const aiChatbotCounselorFlow = ai.defineFlow(
