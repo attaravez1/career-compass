@@ -1,3 +1,46 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-image",
+      "description": "A person looking at a digital compass, representing career guidance.",
+      "imageUrl": "https://images.unsplash.com/photo-1603623898218-0cb7f493309b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21wYXNzJTIwZGlyZWN0aW9ufGVufDB8fHx8MTc2MjY0MjU0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "compass direction"
+    },
+    {
+      "id": "career-tech",
+      "description": "A person working on a laptop with code on the screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1551434678-e076c223a692?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzb2Z0d2FyZSUyMGRldmVsb3BlcnxlbnwwfHx8fDE3NjI2ODczNjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "software developer"
+    },
+    {
+      "id": "career-healthcare",
+      "description": "A doctor listening to a patient's heartbeat with a stethoscope.",
+      "imageUrl": "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkb2N0b3IlMjBwYXRpZW50fGVufDB8fHx8MTc2MjU4OTE5MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "doctor patient"
+    },
+    {
+      "id": "career-creative",
+      "description": "A graphic designer sketching on a tablet.",
+      "imageUrl": "https://images.unsplash.com/photo-1519408469771-2586093c3f14?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxncmFwaGljJTIwZGVzaWdufGVufDB8fHx8MTc2MjYyOTY5NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "graphic design"
+    },
+    {
+      "id": "career-business",
+      "description": "A team of professionals in a meeting room discussing charts.",
+      "imageUrl": "https://images.unsplash.com/photo-1688380692117-63178554d76d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxidXNpbmVzcyUyMG1lZXRpbmd8ZW58MHx8fHwxNzYyNjM1OTg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business meeting"
+    },
+    {
+      "id": "career-education",
+      "description": "A teacher in a classroom with students.",
+      "imageUrl": "https://images.unsplash.com/flagged/photo-1550946107-8842ae9426db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dGVhY2hlciUyMGNsYXNzcm9vbXxlbnwwfHx8fDE3NjI2MTEzMzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "teacher classroom"
+    },
+    {
+      "id": "career-trades",
+      "description": "A construction worker on a building site.",
+      "imageUrl": "https://images.unsplash.com/photo-1607134541550-2994abb8077b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29uc3RydWN0aW9uJTIwd29ya2VyfGVufDB8fHx8MTc2MjY4NzM2Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "construction worker"
+    }
+  ]
 }
